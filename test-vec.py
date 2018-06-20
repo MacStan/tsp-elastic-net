@@ -26,5 +26,8 @@ class TestVecMethods(unittest.TestCase):
 		self.assertEqual(Vec(3,0).distance(Vec(0,0)), 3)
 		self.assertEqual(Vec(3,4).distance(Vec(0,0)), 5)
 		
+	def test_mul_scalar(self):
+		self.assertEqual(Vec(5,5) * 5, Vec(25,25))
+		
 if __name__ == '__main__':
 	unittest.main()

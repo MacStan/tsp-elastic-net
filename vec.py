@@ -18,8 +18,10 @@ class Vec:
 		return Vec( self.x - other.x, self.y - other.y)
 		
 	def __mul__(self, other : "Vec"):
-		self.enforcevec(other)	
-		return Vec( self.x * other.x, self.y * other.y)
+		if isinstance(other, Vec):
+			return Vec( self.x * other.x, self.y * other.y)
+		else:
+			return Vec( self.x * other, self.y * other )
 		
 	def __truediv__(self, other : "Vec"):
 		self.enforcevec(other)	
